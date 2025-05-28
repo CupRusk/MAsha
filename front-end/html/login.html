@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/front-end/css/login.css">
+    <title>Login in your "Secret"</title>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h2 style="color: bisque;">Привет снова.<br> Продолжим вход в аккаунт!</h2>
+        </header>
+
+        <main class="login-form">
+            <form id="loginForm">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+
+                <button type="submit">Войти</button>
+                <p class="register-link">Нет аккаунта? <a href="/front-end/html/register.html">Зарегистрируйтесь</a></p>
+            </form>
+
+            <p id="errorMsg" style="color: red; text-align: center;"></p>
+        </main>
+        <footer class="footer">
+            <p>© 2025 CupRuska. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script src="/front-end/js/login.js"></script>
+</body>
+</html>
