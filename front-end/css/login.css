@@ -4,91 +4,182 @@
     box-sizing: border-box;
 }
 body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    background-color: #a2a2a2;
-    color: #333;
-}
-.container {
-    max-width: 800px;
-    margin: 0 auto;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: radial-gradient(circle, #1a001a 0%, #000000 100%);
+    color: #e3dfff;
+    min-height: 100vh;
     display: flex;
-    flex-direction: column;
-    background-color: #8e8e8e;
-    border: solid 3px #333;
-    box-shadow: 20px 2px 10px rgba(0, 0, 1, 0.1);
-    height: 50vh;
-    background: linear-gradient(75deg, #7e7e7e, #a0a0a0);
-    border-radius: 30px;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.container {
+    position: relative;
+    z-index: 2;
+    width: 90%;
+    animation: fadeIn 3s ease-out;
+    max-width: 700px;
+    background: linear-gradient(135deg, #2e003e, #1a001a);
+    border: 3px solid #6f00ff;
+    border-radius: 25px;
+    box-shadow: 0 0 30px rgba(111, 0, 255, 0.5), 0 0 5px rgba(255, 0, 255, 0.2) inset;
+    overflow: hidden;
+    opacity: 0.65;
+}
+
+header {
+    background: #3c0066;
+    color: #fff0f5;
+    padding: 20px;
+    text-align: center;
+    font-size: 1.4rem;
+    border-bottom: 2px solid #6f00ff;
+    text-shadow: 0 0 5px #9a00ff;
 }
 
 main {
-    flex: 3;
-    padding: 20px;
-    background: linear-gradient(75deg, #7e7e7e, #a0a0a0);
-    border-radius: 30px;
+    padding: 30px;
+    background: rgba(26, 0, 26, 0.8);
 }
-header {
-    color: rgb(0, 0, 0);
-    padding: 10px 20px;
-    text-align: center;
-    border-radius: 20px 20px 0 0;
-    border: solid 3px #333;
-}
+
 .login-form form {
     display: flex;
     flex-direction: column;
+    gap: 15px;
     max-width: 300px;
     margin: 0 auto;
 }
 
 .login-form label {
-    margin-top: 15px;
-    margin-bottom: 5px;
     font-weight: bold;
+    color: #c5a3ff;
 }
 
 .login-form input {
-    padding: 8px;
+    padding: 10px;
     font-size: 1rem;
-    border-radius: 4px;
-    border: 1px solid #ccc;
+    border-radius: 5px;
+    border: 1px solid #6f00ff;
+    background-color: #1a001a;
+    color: #f0e6ff;
+    transition: border 0.3s, box-shadow 0.3s;
+}
+
+.login-form input:focus {
+    border-color: #ff00ff;
+    box-shadow: 0 0 10px #ff00ff;
+    outline: none;
 }
 
 .login-form button {
-    margin-top: 20px;
-    padding: 10px;
-    background-color: #444;
-    color: white;
+    margin-top: 15px;
+    padding: 12px;
+    background-color: #6f00ff;
+    color: #ffffff;
+    font-weight: bold;
     border: none;
-    border-radius: 4px;
+    border-radius: 6px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, transform 0.2s;
 }
 
 .login-form button:hover {
-    background-color: #666;
+    background-color: #9a00ff;
+    transform: scale(1.03);
 }
 
-.info {
-    margin-top: 15px;
+.register-link {
+    margin-top: 10px;
     text-align: center;
+    font-size: 0.9rem;
 }
 
-.info a {
-    color: #0af;
+.register-link a {
+    color: #ff00ff;
     text-decoration: none;
 }
 
-.info a:hover {
+.register-link a:hover {
     text-decoration: underline;
 }
 
+#errorMsg {
+    margin-top: 10px;
+    text-align: center;
+    color: #ff4c4c;
+}
+
 footer {
-    flex: 1;
     text-align: center;
     padding: 10px;
-    background-color: #444;
-    color: white;
-    border-radius: 0 0 20px 20px;
+    background-color: #2e003e;
+    color: #ccc;
+    font-size: 0.9rem;
+    border-top: 2px solid #6f00ff;
+}
+
+
+.geass-eye {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 700px;
+    height: 500px;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    z-index: 0; 
+    background: radial-gradient(circle, #72007e 30%, #ee6a6a 50%, transparent 70%);
+    box-shadow: 0 0 40px rgba(251, 3, 3, 0.8), 0 0 100px rgba(255, 0, 0, 0.6);
+    animation: pulse 2s infinite;
+}
+
+.geass-eye::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 60px;
+    height: 60px;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    background-color: #ff0000;
+    box-shadow: 0 0 20px #ff0000;
+}
+
+.geass-eye::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 220px;
+    height: 220px;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    border: 3px solid rgba(255, 0, 0, 0.6);
+    box-shadow: 0 0 30px rgba(255, 0, 0, 0.4);
+}
+.checkbox {
+    position: relative;
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    margin-right: 10px;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(1.1);
+        opacity: 0.9;
+    }
+}
+
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 0.65; transform: scale(1); }
 }

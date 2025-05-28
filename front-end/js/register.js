@@ -1,4 +1,3 @@
-// Привет, начинаем!
 document.getElementById("loginForm").addEventListener("submit", async (e) => {
     e.preventDefault();
 
@@ -7,26 +6,33 @@ document.getElementById("loginForm").addEventListener("submit", async (e) => {
     const errorMsg = document.getElementById("errorMsg");
 
     try {
-        const response = await fetch("http://127.0.0.1:8000/api/login", {
+        const response = await fetch("http://127.0.0.1:8000/api/register", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
             },
             body: JSON.stringify({ username, password }),
         });
-
-        if (!response.ok) {
-            const errorData = await response.json();
-            throw new Error(errorData.detail || "Ошибка входа");
+        if (password.length < 8) {
+            throw new Error("Пароль должен содержать не менее 8 символов");
+        }
+        if (!username || !password) {
+            throw new Error("Пожалуйста, заполните все поля");
         }
 
         const data = await response.json();
-        alert(data.message); 
-        window.location.href = "/front-end/html/main.html"; // Перенаправление на главную страницу
+
+        if (!response.ok) {
+            throw new Error(data.detail || "Ошибка регистрации");
+        }
+
+        alert(data.message);
+        window.location.href = "/front-end/html/main.html";
     } catch (error) {
-        errorMsg.textContent = error.message;
+        if (errorMsg) errorMsg.textContent = error.message;
     }
 });
+
 
 function togglePasswordVisibility() {
     const passwordInput = document.getElementById("password");

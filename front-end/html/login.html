@@ -1,12 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/front-end/css/login.css">
-    <title>Login in your "Secret"</title>
+    <title>Вход в систему "Secret"</title>
 </head>
 <body>
+    <div class="geass-eye"></div>
     <div class="container">
         <header class="header">
             <h2 style="color: bisque;">Привет снова.<br> Продолжим вход в аккаунт!</h2>
@@ -15,10 +16,11 @@
         <main class="login-form">
             <form id="loginForm">
                 <label for="username">Username:</label>
-                <input type="text" id="username" name="username" required>
+                <input type="text" id="username" name="username" required autofocus>
 
                 <label for="password">Password:</label>
-                <input type="password" id="password" name="password" required>
+                <input type="password" id="password" name="password" required autofocus>
+                <input type="checkbox" id="showPassword" class="checkbox" onclick="togglePasswordVisibility()"> 
 
                 <button type="submit">Войти</button>
                 <p class="register-link">Нет аккаунта? <a href="/front-end/html/register.html">Зарегистрируйтесь</a></p>

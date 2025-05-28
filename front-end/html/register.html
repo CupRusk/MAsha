@@ -1,11 +1,38 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>register</title>
+    <link rel="stylesheet" href="/front-end/css/login.css">
+    <title>Login in your "Secret"</title>
 </head>
 <body>
-    
+    <div class="geass-eye"></div>
+    <div class="container">
+        <header class="header">
+            <h2 style="color: bisque;">Привет снова.<br> Продолжим регистрацию аккаунта!</h2>
+        </header>
+
+        <main class="login-form">
+            <form id="loginForm">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+                <input type="checkbox" id="showPassword" class="checkbox" onclick="togglePasswordVisibility()">
+
+                <button type="submit">Зарегистрироваться</button>
+                <p class="register-link">Есть аккаунт? <a href="/front-end/html/login.html">Авторизуйтесь</a></p>
+            </form>
+
+            <p id="errorMsg" style="color: red; text-align: center;"></p>
+        </main>
+        <footer class="footer">
+            <p>© 2025 CupRuska. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script src="/front-end/js/register.js"></script>
 </body>
 </html>
